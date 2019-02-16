@@ -1,0 +1,58 @@
+WOIMA
+
+>120bpm 12/8 1&a2&a3&a4&a   ("One and a Two and a Three and a Four and a...")
+             rlr rlr lr l  
+Djembe 1     OOS.SSB.SB.S   ("Ma-gic trick, prestidi--------gitat------ion!")
+              lr lr lr lr
+Djembe 2     .BS.OS.BS.OS   ("   It's pink  & blue    It's pink      & blue")
+             1 & a 2 & a    ("One                 Two                      ")
+
+Bell         x.x.x.x.xx.x   ("One   two   three   four    and five     and ")
+Bell         x.x.x.x.xx.x   ("-ble  one   one     one     dou-ble      dou-")
++Kenkeni     ..K.....K...   ("      up                    up               ")
++Sangban     G...G....G..   ("Down        down,   [rest]      down         ")
+
+Bell         x.x.x.x.xx.x   ("One   two   three   four    and five     and ")
+Bell         x.x.x.x.xx.x   ("-ble  one   one     one     dou-ble      dou-")
++Dununba     D...D.D..D..   ("One         three   four        five         ")
+             1&a2&a3&a4&a
+
+hush
+
+d1 
+$ slow 1
+$ every 4 rev
+$ every 2 (0.01 <~)
+$ sound "tabla:4 tabla:3 tabla:3 ~ tabla:3 tabla:3 tabla:23 ~ tabla:3 tabla:23 ~ tabla:3 "
+# pan 0.8
+
+
+d2
+$ every 2 (0.01 ~>)
+$ sound "~ tabla2:7 tabla2:8 ~ tabla2:3 tabla2:8 ~ tabla2:7 tabla2:8 ~ tabla2:3 tabla2:8 "
+# gain 0.9
+# pan 0.4 
+
+d3 $ sound "metal:1 ~ metal ~ metal ~ metal ~ metal metal ~ metal "
+# gain 0.8
+
+d4
+$ every 2 (fast (1 + (1/2.8))) 
+$ sound "bd*3"
+
+d5 $ sound "bass1 ~ bass1:3 ~ bass1 ~ ~ ~ bass1:3 bass1 ~ ~ "
+# gain "1.2 1 1 1 1 1 1 1 1 1 1 1 "
+# legato 2
+
+d6
+$ ((1/6) ~>) 
+$ every 2 (|+| n "[1 .. 6]")
+$ sound "tabla" |+| 3 |+|  n "2 3 4 5 6 [7*3]" |+| n "[4*3] 5 6" 
+# legato 2
+# crush 4.4
+# gain 0.9
+
+d7
+$ sound "bd:23*3"
+
+hush

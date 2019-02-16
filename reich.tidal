@@ -1,0 +1,68 @@
+
+
+hush
+
+reich = "0 0 0 ~ 0 0 ~ 0 ~ 0 0 ~ "
+
+d1 
+$ n reich
+# s "cp"
+# sustain 0.03
+# pan 0.9
+# speed 0.9
+# gain 0.6
+
+d2
+$ (((slow 24 $ run 12) / 12) ~>)
+$ n reich
+# s "cp"
+# sustain 0.02
+# pan 0.1
+# gain 0.6
+
+d3 
+$ (slow 2)
+$ n reich + 3
+# s "bd" 
+# gain 0.8
+
+d3 $ silence
+
+d4 
+$ fast 1
+$ (|+ n "1 2 3 4 5 6")
+$ jux (|+ n "5 6 7 8")
+$ n reich + 8
+# s "sid"
+# speed (slow 6 $ range 0.4 1.5 $ sine)
+# hpf 180
+# pan 0.3
+# gain 0.7
+# crush 10
+
+d6
+$ (((slow 24 $ run 12) / 12) ~>)
+$ fast 1
+-- $ (|+ n "1 2 3 4 5 6")
+ $ jux (|+ n "5 6 7 8")
+$ n reich + 8
+# s "sid"
+# speed (slow 6 $ range 0.41 1.51 $ sine)
+# hpf 200
+# pan 0.7
+# gain 0.7
+# crush 8
+
+hush
+
+chords = "[f'major f'maj7 d'min7 c'sus4]/16" 
+
+-- d5 
+-- $ (|-| 13)
+-- $ n (arp "pinkyupdown" chords)
+-- # s "supersaw"
+-- # sustain 4
+-- # speed sine
+-- # pitch1 (range 0.2 1 $ slow 6 $ sine) 
+-- # gain 0.3
+-- # pan sine
