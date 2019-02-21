@@ -26,7 +26,6 @@ $ every 2 (0.01 <~)
 $ sound "tabla:4 tabla:3 tabla:3 ~ tabla:3 tabla:3 tabla:23 ~ tabla:3 tabla:23 ~ tabla:3 "
 # pan 0.8
 
-
 d2
 $ every 2 (0.01 ~>)
 $ sound "~ tabla2:7 tabla2:8 ~ tabla2:3 tabla2:8 ~ tabla2:7 tabla2:8 ~ tabla2:3 tabla2:8 "
@@ -39,6 +38,7 @@ d3 $ sound "metal:1 ~ metal ~ metal ~ metal ~ metal metal ~ metal "
 d4
 $ every 2 (fast (1 + (1/2.8))) 
 $ sound "bd*3"
+# gain 1.4
 
 d5 $ sound "bass1 ~ bass1:3 ~ bass1 ~ ~ ~ bass1:3 bass1 ~ ~ "
 # gain "1.2 1 1 1 1 1 1 1 1 1 1 1 "

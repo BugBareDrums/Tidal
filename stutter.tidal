@@ -1,0 +1,20 @@
+d1 $ juxBy 0.8 (0.01 ~>) $ stut 4 0.5 (-0.1) $ sound "[bd:2]/4" # crush 7 # hpf 200
+
+d2  $ sound "bd:2 sn:3"
+
+hush
+
+offset = 0.01
+
+d3 
+$ stack [
+    stutWith 2 ((1/14)+ offset) (|+ speed 2) $ sound "[bd sn:3 bd ~]/2" # gain 0.7, 
+    every 2 (stutWith 4 ((5/16)+ offset) (|* speed "4")) $ sound "bd sn:3" # hpf 400 # gain 1.2,
+    sound "bd:2 sn:3" # gain 1.4,
+    every 8 (stut 6 1 (1/32)) $ (((5/16) + offset) ~>) $ sound "bd:1*2" 
+] 
+
+
+d4 $ ((1/2) ~>) $ stutWith 4 (5/32 + offset) (|/ cutoff 1.7) 
+$ sound "cp:1/4"  
+# crush 15 # cutoff 2000 # hpf 400

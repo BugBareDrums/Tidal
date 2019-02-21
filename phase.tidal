@@ -1,0 +1,39 @@
+
+hush
+
+d1 
+$ jux (sine ~>)  
+$ sound "[~ cp]*2"
+# crush 9
+# gain 0.4
+
+d3
+$ jux (sine ~>)  
+$ sound "~ hh hh ~ hh ~ hh hh "
+
+d2 $ "bd:3*4"
+
+d5
+$ stack[
+    arpg $ n (scale "ritusen" ("0 0 ~ 5  ~ 4 ~ 3 " |-| "[0 0 2 3]/4")),
+    arpg $ n (scale "ritusen" ("0*4" |-| "[0 0 2 3]/4" |-| "[0,3,5,7]" |+| 12)) # gain 0.1
+]
+# sound "midi"
+# gain 0.5
+
+d5
+$ arpg $ n (scale "ritusen" ("[0 0 2 3]/4") |+| "[0,5,7]")
+# sound "midi"
+# gain 0.5
+
+d6 
+$ stack [
+    sound "{~ sn:2 sn:1 sn:7}%6" # gain 0.5 # hpf (range 0 1000 $ sine) # pan 0.8,
+    sound "{~ sn:1 ~ sn:7}%4" # gain 0.7 # pan 0.3
+]
+
+hush
+
+d1 $ up "0 0*2 0*4 1" # sound "arpy bass2 bd"
+
+
