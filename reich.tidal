@@ -5,6 +5,8 @@ hush
 
 reich = "0 0 0 ~ 0 0 ~ 0 ~ 0 0 ~ "
 
+d1 $ sound "sn:2*8" # cutoff (perlin * 2000)
+
 d1 
 $ n reich
 # s "cp"
@@ -12,7 +14,7 @@ $ n reich
 # pan 0.9
 # speed 0.9
 # gain 0.6
- 
+
 d2
 $ (((slow 24 $ run 12) / 12) ~>)
 $ n reich

@@ -1,0 +1,50 @@
+
+hush
+
+setcps (160/60/4)
+
+
+160/60
+
+d1 
+$ superimpose ((# speed "4") . ((1/16) <~) . (# pan 0.9))
+$ (((slow 8 $ run 4) / 4) ~>)
+$ every' 2 1 (# gain 0)
+$ n "{3 2 ~ }%8" 
+# s "print"
+# speed (sine + 2)
+# gain 0.8
+
+# crush 7
+
+d1 $ superimpose (fast 1.005)
+$ up "<0 7 10> <2 9>"
+# sound "supersaw"
+
+d2 
+$ n "{0 1 4 5}%3" 
+# s "msg"
+# pan (range 0.4 0.8 $ slow 6 sine)
+# gain 1.2
+
+d3 $ silenc
+
+d3
+$ s "bd:3*2" 
+# speed "2 0.6"
+
+d5 $ silence
+
+d5
+$ n (every 4 const ("3*4") $ "3(6, 16")         
+# s "bd"
+# gain 0.7
+# sustain 0.1
+
+# crush (sine * 4 + 3)
+
+d4 
+$ n "[[8*8?] [8*8?] 8 8 7 8 8 {8 8 8}%3]/2"
+# s "sid"
+# gain 0.8
+# pan 0.4

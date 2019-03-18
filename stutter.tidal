@@ -18,3 +18,5 @@ $ stack [
 d4 $ ((1/2) ~>) $ stutWith 4 (5/32 + offset) (|/ cutoff 1.7) 
 $ sound "cp:1/4"  
 # crush 15 # cutoff 2000 # hpf 400
+
+
