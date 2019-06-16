@@ -1,0 +1,28 @@
+hush
+
+d1 
+$ euclid "<3 3 3 5>" 8 
+$ sound "[808bd:3, shock:9]"
+
+d2 
+$ (0.5 ~>)
+$ jux (+ 9)
+$ off (-0.02) (+ 6)
+$ sound "<clp:2 clp:3 clp:1>"
+|> hpf 400
+
+d3 
+$ n "2 6 8 19 3 5 7 23"
+>| sound "uke(<9 10 9 12>, 16)"
+|> hpf (500 + (sine * 500))
+
+hush
+
+d4
+$ slow 2
+$ off (3/16) (|> speed 2)
+$ n ((run 16) * 5)
+|> s "whack(11, 16)"
+|> gain 0.65
+|> speed 0.5
+|> pan rand

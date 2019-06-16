@@ -1,0 +1,23 @@
+d1 $ weave 16 (pan sine)
+  [sound "bd sn cp",
+   sound "casio casio:1",
+   sound "[jvbass*2 jvbass:2]/2",
+   sound "hc*4"
+  ]
+
+d1 $ arp "0*16" $ sound "supermandolin" >| n "c'maj f'maj a'min" 
+
+  d1 $ weave 16 (sound "arpy" >| n (run 8))
+--   [vowel "a e i",
+   [vowel "i [i o] o u",
+  vowel "[e o]/3 [i o u]/2",
+   speed "1 2 3"
+  ]
+
+  hush
+
+  d1 $ sound (fit' 1 2 "0 1" "1 0" "bd sn")
+
+  d1 $ sound (fit 3 ["bd", "sn", "arpy", "arpy:1", "casio"] "0 [~ 1] 2 1")
+
+  

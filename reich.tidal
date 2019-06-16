@@ -5,15 +5,20 @@ hush
 
 reich = "0 0 0 ~ 0 0 ~ 0 ~ 0 0 ~ "
 
+
 d1 $ sound "sn:2*8" # cutoff (perlin * 2000)
+
+
+setcps (140/60/4)
+
 
 d1 
 $ n reich
-# s "cp"
-# sustain 0.03
+# s "clp"
 # pan 0.9
 # speed 0.9
 # gain 0.6
+
 
 d2
 $ (((slow 24 $ run 12) / 12) ~>)
@@ -22,6 +27,7 @@ $ n reich
 # sustain 0.02
 # pan 0.1
 # gain 0.6
+
 
 d3 
 $ (slow 2)
@@ -33,27 +39,27 @@ d3 $ silence
 
 d4 
 $ fast 1
-$ (|+ n "1 2 3 4 5 6")
+$ (|+ n "3 ~ 3 4 5 2 ")
 $ jux (|+ n "5 6 7 8")
 $ n reich + 8
 # s "sid"
 # speed (slow 6 $ range 0.4 1.5 $ sine)
-# hpf 180
-# pan 0.3
-# gain 0.7
+# hpf 120
+# pan "0.4 0.2 0.3" 
+# gain "0.8 0.6 0.7 0.5" 
 # crush 10
 
 d6
 $ (((slow 24 $ run 12) / 12) ~>)
 $ fast 1
 -- $ (|+ n "1 2 3 4 5 6")
- $ jux (|+ n "5 6 7 8")
+$ jux (|+ n "5 6 7 8")
 $ n reich + 8
 # s "sid"
 # speed (slow 6 $ range 0.41 1.51 $ sine)
-# hpf 200
+# hpf 210
 # pan 0.7
-# gain 0.7
+# gain "[0.8, 0, 0, 0] "
 # crush 8
 
 hush

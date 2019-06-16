@@ -1,0 +1,48 @@
+hush
+
+d1 
+$ degradeBy 0.2
+$ every 2 (bite 16 "0..7 0(<5 5 3 3>, 8)") 
+$ iter 8 $ n "[0 1]*4" 
+# sound "clak" 
+# speed "{1 1.5 2 1 1.3 0.6}%8 "
+# gain 1.2
+
+d2 
+$ every 2 (iter 8) $ sound "bd(5,8)" # n "0 2 4"
+
+d3 
+$ jux (+(2))
+$ sound "~ <realclaps realclaps:1 realclaps:4>" 
+# hpf 400
+# gain 0.8
+
+d4 
+$ degrade
+$ jux (0.02 ~>)
+$ off (3/16) (+ 4)  
+$ ((3/8) ~>) 
+$ n "0" # sound "bleep" 
+# speed (slow 4 $ sine) 
+# gain 0.5
+# crush 6
+
+d5 
+$ off (3/8) (|+ 12)
+$ bite 2 "[0 0 0 1]/4"
+-- $ chunk 8 (rev)
+$ sound "[supersaw*8]/2" 
+>| n (scale "harmonicMinor" "[0 2 4 1 2 4 5 4 3 4 2 4 1 4 7 6]/2" |- 24 |+ (6) )
+# hpf 1000
+# sustain ("[0.5 0.2 0.3 0.6 0.25 0.3 0.5 0.2]" * 0.2)
+# gain 0.8
+# pan rand
+# crush 5
+
+
+hush
+
+# gain 0.9
+# delay 0.3
+
+# legato 1

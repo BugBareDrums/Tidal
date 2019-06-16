@@ -3,6 +3,8 @@ d1 $ every 4 rev $ sound "[[bd, hh] hh [sd:2, hh] hh]"
 cps (105/60/2)
 
 
+hush
+
 d1  
 $ ("[0 0.25 0.5 0.75]/4" ~>) 
 $ sound "sd:1(5,8)" 
@@ -55,6 +57,7 @@ $ sound "breaks125:5"
 hush
 
 d1 $ sound "[bd*2 sd:2](3,8)"
+
 d2 $ sound "hh*8" # gain (slow 2 $ scale 0.8 1 sine)
 
 d1 $ slow sine $ sound "hh*32" 
